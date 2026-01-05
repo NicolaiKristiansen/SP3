@@ -1,0 +1,101 @@
+//API Endpoints
+
+//Security Endpoints
+### register a user
+POST http://{{url}}/auth/register
+
+{
+    "username": "user2",
+    "password": "pass12345"
+}
+
+
+### login
+POST http://{{url}}/auth/login
+
+{
+    "username": "ADMIN",
+    "password": "1234"
+}
+
+### login
+POST http://{{url}}/auth/login
+
+{
+    "username": "USER",
+    "password": "1234"
+}
+
+### test user token
+GET http://{{url}}/protected/user_demo
+AUTHORIZATION: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk1hZ251cyBTaW1vbnNlblwiIiwic3ViIjoiQURNSU4iLCJleHAiOjE3NjEzODMyNTQsInJvbGVzIjoiQWRtaW4iLCJ1c2VybmFtZSI6IkFETUlOIn0.R1Zdn-KkMQd8RAgn7kfLPRxpS5uzoOUvUyhRR94sPUM
+
+### test admin token
+GET http://{{url}}/protected/admin_demo
+AUTHORIZATION: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk5pY29sYWkgS3Jpc3RpYW5zZW5cIiIsInN1YiI6IkFETUlOIiwiZXhwIjoxNzYxNTU5ODQ1LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBRE1JTiJ9.PYFOXJuwNCR2hxMLTunv1LGRk2zbej9rE0xP4343OoQ
+
+
+
+//Basket & Product Endpoints
+### post a product to specific basket -- User Token
+POST https://{{url}}/baskets
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk5pY29sYWkgS3Jpc3RpYW5zZW5cIiIsInN1YiI6IlVTRVIiLCJleHAiOjE3NjU5OTA1NTMsInJvbGVzIjoiVXNlciIsInVzZXJuYW1lIjoiVVNFUiJ9.ILRUBGNCkrcIsBCI7Zq9La1whwVR0UaUHTDRUXPKcuQ
+
+{
+  "basketId": "1",
+  "productId": "3",
+  "amount": "2"
+}
+
+
+### create a product -- Admin Token
+POST https://{{url}}/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk5pY29sYWkgS3Jpc3RpYW5zZW5cIiIsInN1YiI6IkFETUlOIiwiZXhwIjoxNzYxNTU5ODQ1LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBRE1JTiJ9.PYFOXJuwNCR2hxMLTunv1LGRk2zbej9rE0xP4343OoQ
+
+{
+  "name": "Apple",
+  "price": "4.5",
+  "category": "FOOD"
+}
+
+### find a specific product -- Admin Token
+GET https://{{url}}/products/1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk5pY29sYWkgS3Jpc3RpYW5zZW5cIiIsInN1YiI6IkFETUlOIiwiZXhwIjoxNzYxNTU5ODQ1LCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBRE1JTiJ9.PYFOXJuwNCR2hxMLTunv1LGRk2zbej9rE0xP4343OoQ
+
+### find all existing products -- Admin Token
+GET https://{{url}}/products
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk5pY29sYWkgS3Jpc3RpYW5zZW5cIiIsInN1YiI6IkFETUlOIiwiZXhwIjoxNzY1OTgwMDgzLCJyb2xlcyI6IkFkbWluIiwidXNlcm5hbWUiOiJBRE1JTiJ9.J-smZXRxxHFes3OMIR-q1K8iCzxsj6A7UkBMzayoDZo
+
+### update a product -- Admin Token
+PUT https://{{url}}/products/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk1hZ251cyBTaW1vbnNlblwiIiwic3ViIjoiQURNSU4iLCJleHAiOjE3NjE0MTg0MjEsInJvbGVzIjoiQWRtaW4iLCJ1c2VybmFtZSI6IkFETUlOIn0.y6VJ8BuQ5OhxpAdrsRLc4yD1ROn4Q2UfGKQSQzFxXg8
+
+{
+  "name": "Phone",
+  "price": "50.2",
+  "category": "ELECTRONICS"
+}
+
+### delete product -- Admin Token
+DELETE https://{{url}}/products/1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk1hZ251cyBTaW1vbnNlblwiIiwic3ViIjoiQURNSU4iLCJleHAiOjE3NjE0MTg0MjEsInJvbGVzIjoiQWRtaW4iLCJ1c2VybmFtZSI6IkFETUlOIn0.y6VJ8BuQ5OhxpAdrsRLc4yD1ROn4Q2UfGKQSQzFxXg8
+
+### find all products from specific basket -- User Token
+GET https://{{url}}/basketproducts/1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIk5pY29sYWkgS3Jpc3RpYW5zZW5cIiIsInN1YiI6IlVTRVIiLCJleHAiOjE3NjU5OTA1NTMsInJvbGVzIjoiVXNlciIsInVzZXJuYW1lIjoiVVNFUiJ9.ILRUBGNCkrcIsBCI7Zq9La1whwVR0UaUHTDRUXPKcuQ
+
+
+### buy function, with basket id.
+POST http://{{url}}/baskets/buy/1
+
+
+### Get Receipt
+GET https://{{url}}/receipt/2
