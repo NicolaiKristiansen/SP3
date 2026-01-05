@@ -1,0 +1,104 @@
+/* ---------------- Main container for page content ---------------- */
+.container {
+  margin-left: 260px; /* space for left options box */
+  padding: 1.5rem;
+
+  max-width: 900px;
+  box-sizing: border-box;
+
+  font-size: 1rem; /* base font size */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center all children horizontally */
+  gap: 1rem; /* spacing between elements */
+
+  margin: 1.5rem auto 0 auto; /* top, horizontal auto centering */
+}
+
+/* ---------------- Responsive font scaling ---------------- */
+@media (max-width: 900px) {
+  .container {
+    margin-left: 240px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin-left: 200px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin-left: 0;
+    font-size: 0.85rem;
+    margin-top: 4.5rem; /* space for horizontal options bar */
+  }
+}
+
+/* ---------------- Table styling ---------------- */
+.container table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  background-color: aquamarine;
+  border-radius: 8px;
+  border: 3px solid black;
+  overflow: hidden;
+}
+
+.container th,
+.container td {
+  padding: 0.75rem;
+  border: 3px solid black;
+  word-break: break-word;
+  color: black;
+}
+
+.container th {
+  background-color: aquamarine;
+  font-weight: 600;
+}
+
+.container td button {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.container td button:hover {
+  background-color: darkslategray;
+  color: white;
+}
+
+/* ---------------- Buy button styling ---------------- */
+.container > button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  background-color: black;
+  cursor: pointer;
+}
+
+.container > button:hover {
+  background-color: darkslategray;
+  color: white;
+}
+
+/* ---------------- Responsive adjustments ---------------- */
+@media (max-width: 500px) {
+  .container table,
+  .container th,
+  .container td,
+  .container > button {
+    font-size: 0.9rem;
+  }
+}
