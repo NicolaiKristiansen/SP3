@@ -34,7 +34,7 @@ jobs:
         run: |
           # Define SSH connection info
           SSH_USER="nico"
-          DO_DROPLET_IP={% raw %}${{ secrets.DO_DROPLET_IP }}{% endraw %}
+          DO_DROPLET_IP=${{ secrets.DO_DROPLET_IP }}
           APP_NAME="WebShop"
           REMOTE_PATH="/home/nico/deployment/site/$APP_NAME/"
 
