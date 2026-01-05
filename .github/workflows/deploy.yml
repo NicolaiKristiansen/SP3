@@ -28,15 +28,7 @@ jobs:
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.DO_SSH_KEY }}
-
-      - name: Decode and add SSH key to agent
-        run: |
-          # Create the .ssh directory if it doesn't exist
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DO_SSH_KEY }}" | base64 --decode > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-add ~/.ssh/deploy_key
+          ssh-private-key: ${{ secrets.DO_SSH_KEY }} # Directly use the secret
 
       - name: Sync files to DigitalOcean Droplet using rsync
         run: |
