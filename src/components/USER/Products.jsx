@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useOutletContext } from "react-router";
-import styles from "./products.module.css"
+import styles from "./Products.module.css"
 
 const Products = () => {
     const {APIURL, basketId} = useOutletContext();
