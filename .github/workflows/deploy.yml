@@ -25,10 +25,11 @@ jobs:
       - name: Build the React project
         run: npm run build # Runs the build script specified in package.json.
 
-      - name: Set up SSH agent
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.DO_SSH_KEY }} # The SSH private key stored in GitHub secrets.
+      - name: Decode and add SSH key to agent
+        run: |
+        echo "${{ secrets.DO_SSH_KEY }}" | base64 --decode > ~/.ssh/deploy_key
+        chmod 600 ~/.ssh/deploy_key
+        ssh-add ~/.ssh/deploy_key
 
       - name: Sync files to DigitalOcean Droplet using rsync
         run: |
