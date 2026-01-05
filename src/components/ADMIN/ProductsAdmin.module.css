@@ -1,0 +1,111 @@
+/* Main container for page content */
+.container {
+  margin-left: 260px; /* space for left options box */
+  padding: 1.5rem;
+
+  max-width: 900px;
+  box-sizing: border-box;
+
+  font-size: 1rem; /* base font size */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center all children horizontally */
+  gap: 1rem; /* spacing between elements */
+
+  margin: 1.5rem auto 0 auto; /* top, horizontal auto centering */
+}
+
+/* Responsive font scaling */
+@media (max-width: 900px) {
+  .container {
+    margin-left: 240px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    margin-left: 200px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center inputs and labels */
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 400px; /* form does not grow too wide */
+}
+
+/* Input and select styling */
+input, select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc; /* thin border */
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px; /* stop from stretching too far */
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Headings, labels, paragraphs centered */
+h1, p, label {
+  text-align: center;
+  width: 100%;
+  max-width: 600px; /* prevent stretching too wide */
+}
+
+/* Product card */
+.product {
+  border: px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: aquamarine;
+
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center product info */
+  gap: 0.5rem;
+}
+
+/* Product text */
+.product p {
+  margin: 0.25rem 0;
+  color: black;
+  text-align: center;
+}
+
+/* Buttons inside product cards */
+.product button {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 3px solid #ccc;
+  cursor: pointer;
+}
+
+/* Buttons hover effect */
+.product button:hover {
+  background-color: darkslategray;
+}
+
+/* Responsive text for small screens */
+@media (max-width: 500px) {
+  input, select, .product, h1, p, label {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,61 @@
+.options {
+  position: fixed;
+  top: 50%;       
+  transform: translateY(-50%);
+  left: 0;
+
+  width: 200px;       
+  height: 400px;
+  box-sizing: border-box;
+
+  display: grid;
+  place-content: center;
+  grid-auto-rows: min-content;
+  row-gap: 1rem;
+
+  padding: 1rem;
+  background-color: aquamarine;
+  border-radius: 50px;
+}
+
+.options a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: x-large;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 500px) {
+  /* Move sidebar to top horizontally */
+  .options {
+    position: fixed;
+    top: 5rem;        /* below login bar */
+    left: 0;
+    right: 0;
+    transform: none;
+    height: auto;
+    width: 100%;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Make links smaller on mobile */
+  .options a {
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Adjust page content to not go under options */
+  .container {
+    margin-left: 0; /* no sidebar on the left now */
+    margin-top: 4.5rem; /* give space for horizontal options */
+    max-width: 90%; /* prevent stretching too wide */
+    padding: 1rem;
+  }
+}

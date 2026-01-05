@@ -1,0 +1,46 @@
+.home {
+  margin-left: 260px; /* space for sidebar */
+  padding: 1.5rem;
+
+  max-width: 900px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center all children horizontally */
+  gap: 1rem;
+
+  font-size: 1rem; /* base font size */
+
+  margin: 1.5rem auto 0 auto; /* top, horizontal auto centering */
+}
+
+/* Center headings and paragraphs */
+.home h1,
+.home p {
+  text-align: center;
+  width: 100%;
+  max-width: 600px; /* prevent text from stretching too wide */
+}
+
+/* Responsive font scaling */
+@media (max-width: 900px) {
+  .home {
+    margin-left: 240px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .home {
+    margin-left: 200px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    margin-left: 0; /* sidebar overlaps */
+    font-size: 0.85rem;
+  }
+}
