@@ -5,7 +5,7 @@ import './App.css'
 import { Navigate, Outlet } from 'react-router'
 
 function App() {
-  const APIURL = "webshop.knoglemau.dk/api";
+  const APIURL = "webshop.knoglemau.dk/api/";
   const [role, setRole] = useState("")
   const [loggedIn, setLoggedIn] = useState(false)
   const basketId = 1
